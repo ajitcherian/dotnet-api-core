@@ -16,9 +16,9 @@ phases:
       - IMAGE_TAG=${COMMIT_HASH:=latest}
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t $REPOSITORY_URI:latest .
-      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+      - docker build -t ajitcherian/dotnet-api-core-main:latest .
+      - docker tag ajitcherian/dotnet-api-core-main:latest ajitcherian/dotnet-api-core-main:$IMAGE_TAG
       - echo Build completed on `date`
       - echo Pushing the Docker images...
-      - docker push $REPOSITORY_URI:latest
-      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - docker push ajitcherian/dotnet-api-core-main:latest
+      - docker push ajitcherian/dotnet-api-core-main:$IMAGE_TAG
