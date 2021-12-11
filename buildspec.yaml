@@ -1,8 +1,8 @@
 version: 0.2
 env:
   secrets-manager:
-    DOCKERHUB_PASS: "/docker-hub-creds:password"
-    DOCKERHUB_USERNAME: "/docker-hub-creds:username"
+    DOCKERHUB_PASS: "/docker-hub-creds/password"
+    DOCKERHUB_USERNAME: "/docker-hub-creds/username"
 phases:
   install:
     commands:
