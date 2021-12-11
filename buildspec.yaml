@@ -1,11 +1,14 @@
 version: 0.2
 env:
   secrets-manager:
-    DOCKERHUB_PASS: "/docker-hub-creds/password"
-    DOCKERHUB_USERNAME: "/docker-hub-creds/username"
+    #DOCKERHUB_PASS: docker-hub-creds
+    #DOCKERHUB_USERNAME: "/
+    DOCKERHUM: "docker-hub-creds"
 phases:
   install:
     commands:
+      - DOCKERHUB_USERNAME=$(echo $DOCKERHUM | jq -r '.username')
+      - DOCKERHUB_PASS=$(echo $DOCKERHUM | jq -r '.password')
       - echo pre_build step...
       - docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS
       - REPOSITORY_URI=docker.io/ajitcherian/dotnet-api-core-main
