@@ -11,7 +11,7 @@ phases:
       - DOCKERHUB_PASS=$(echo $DOCKERHUM | jq -r '.password')
       - echo pre_build step...
       - docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS
-      - REPOSITORY_URI=docker.io/ajitcherian/dotnet-api-core-main
+      - REPOSITORY_URI=ajitcherian/dotnet-api-core-main
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
       - echo Build started on `date`
