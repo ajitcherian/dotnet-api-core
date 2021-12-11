@@ -7,7 +7,7 @@ phases:
 pre_build:
 commands:
 - echo Logging in to Amazon docker registry..
-- REPOSITORY_URI=${REPO_ECR}
+- REPOSITORY_URI=docker.io/ajitcherian/dotnet-api-core-main
 - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
 - IMAGE_TAG=${COMMIT_HASH:=latest}
 build:
